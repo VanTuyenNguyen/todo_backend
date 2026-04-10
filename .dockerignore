@@ -1,12 +1,13 @@
 # Environment
 .env
-.env.dev
-.env.prod
-.env.local
-.env.*.local
+.env.*
 
 # Dependencies
 node_modules/
+
+# Git
+.git/
+.gitignore
 
 # Logs
 *.log
@@ -19,3 +20,7 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Docker
+docker-compose.yml
+Dockerfile*

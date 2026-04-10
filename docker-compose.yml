@@ -4,7 +4,7 @@ services:
     container_name: tutor_db
     restart: unless-stopped
     env_file:
-      - .env
+      - .env.${NODE_ENV:-dev}
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
