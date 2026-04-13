@@ -26,6 +26,14 @@ INSERT INTO users (name, email, age) VALUES
     ('Nguyen Van Hung',   'hung.nguyen2@example.com',  31),
     ('Tran Thi Lan',      'lan.tran@example.com',      26);
 
+CREATE TABLE IF NOT EXISTS enrollments (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    course_id INT REFERENCES courses(id) ON DELETE CASCADE,
+    enrolled_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(user_id, course_id)
+);
+
 INSERT INTO courses (title, description, teacher_id) VALUES
     ('Lập trình Node.js cơ bản',   'Học Node.js từ đầu đến nâng cao', 1),
     ('PostgreSQL thực chiến',       'Thiết kế và tối ưu database',     2),
